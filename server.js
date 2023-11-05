@@ -14,7 +14,8 @@ const io = new Server(server, {
 app.use(express.static(__dirname + "/public"));
 
 app.get('/api/metrics', (req, res) => {
-    res.json(СЮДА ОТВЕТ ЗАСУНЬ)
+    res.setHeader('Access-Control-Allow-Origin', 'https://monitor-sus.ru');
+    res.json(ОТВЕТ)
   });
 
 
@@ -46,6 +47,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log("Server started on port 3000");
+server.listen(8008, () => {
+  console.log("Server started on port 8008");
 });
